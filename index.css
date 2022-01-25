@@ -1,0 +1,323 @@
+
+
+html,body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-family: sans-serif;
+}
+
+.col {
+  height: 100%;
+}
+
+div[class*=container] {
+  text-align: center;
+  width: 100%;
+  height: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-1 { background: #333; }
+.container-2 { background: #4E598C; }
+.container-3 { background: #8499B1;}
+.container-4 { background: #9888A5; }
+.container-5 { background: #7B6D8D; }
+.container-6 { background: #565554; }
+
+/*
+ BUTTON STYLING
+*/
+
+.btn {
+  position: relative;
+  color: white;
+  width: 256px;
+  height: 64px;
+  line-height: 64px;
+  transition: all 0.3s;
+
+}
+
+.btn::before, .btn::after {
+  content: '';
+  position: absolute;
+  transition: all 0.3s;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+/* BTN ONE */
+.btn-one::before {
+  left: 4px;
+  z-index: 1;
+  
+  opacity: 0;
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(0.1, 1);
+}
+
+.btn-one:hover::before {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+.btn-one::after {
+  transition: all 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.btn-one:hover::after {
+  transform: scale(1, .1);
+  opacity: 0;
+}
+.btn--action span{
+    display: inline-block;
+    position: relative;
+    transition: all .5s ease;
+  }
+  
+  .btn--action span:before{
+      margin-left: -30px;
+    content: url(logo.png); 
+    color: #000;
+    font-size: 1rem;
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 1.5rem;
+    opacity: 0;
+    transition: all .1s ease 0s;
+  }
+  
+  .btn--action:hover span{
+    padding-left: 1.5rem; 
+  }
+  
+  .btn--action:hover span:before{
+    left: 0;
+    opacity: 1;
+  }
+
+/* BTN TWO */
+.btn-two::before, .btn-two::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  transition: all 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.btn-two:hover::after {
+    content: url(logo.png);
+  animation-name: rotatecw;
+  animation-duration: 2s;
+}
+.btn-two:hover::before {
+  animation-name: rotateccw; 
+  animation-duration: 3s;
+}
+.btn-two:hover::after, .btn-two:hover::before {
+    background-color: #4E598C;
+    padding-top: 20px;
+  left: 96px;
+  width: 64px;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes rotatecw {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+@keyframes rotateccw {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(-360deg);}
+}
+
+/* BTN THREE */
+  
+  
+ 
+
+  ul li {
+    list-style:none;
+  }
+  ul li a {
+    display:block;
+    position:relative;
+    width:250px;
+    height:70px;
+    line-height:70px;
+    font-size:20px;
+    text-align:center;
+    text-decoration:none;
+    color:#404040;
+    margin: 0 30px;
+    transition:.5s;
+  }
+  ul li a span {
+    position:absolute;
+    transition: transform .5s;
+  }
+  ul li a span:nth-child(1),
+  ul li a span:nth-child(3){
+    width:100%;
+    height:3px;
+    background:#404040;
+  }
+  ul li a span:nth-child(1) {
+    top:0;
+    left:0;
+    transform-origin: right;
+  }
+  ul li a:hover span:nth-child(1) {
+    transform: scaleX(0);
+    transform-origin: left;
+    transition:transform .5s;
+  }
+  
+  ul li a span:nth-child(3) {
+    bottom:0;
+    left:0;
+    transform-origin: left;
+  }
+  ul li a:hover span:nth-child(3) {
+    transform: scaleX(0);
+    transform-origin: right;
+    transition:transform .5s;
+  }
+  
+  ul li a span:nth-child(2),
+  ul li a span:nth-child(4){
+    width:3px;
+    height:100%;
+    background:#404040;
+  }
+  ul li a span:nth-child(2) {
+    top:0;
+    left:0;
+    transform:scale(0);
+    transform-origin: bottom;
+  }
+  ul li a:hover span:nth-child(2) {
+    transform: scale(1);
+    transform-origin: top;
+    transition:transform .5s;
+  }
+  ul li a span:nth-child(4) {
+    top:0;
+    right:0;
+    transform:scale(0);
+    transform-origin: top;
+  }
+  ul li a:hover span:nth-child(4) {
+    transform: scale(1);
+    transform-origin: bottom;
+    transition:transform .5s;
+  }
+  
+  .button-3:hover {
+    color: #ccc;
+  }
+  .button-3:hover span { 
+    background: #ccc;
+  }
+
+.btn-three::before {
+  opacity: 0;
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1, 0.1);
+}
+
+.btn-three:hover::before {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+.btn-three::after {
+  transition: all 0.3s;
+  border: 5px solid rgba(255, 255, 255, 0.5);
+}
+
+.btn-three:hover::after {
+  transform: scale(1, .1);
+  opacity: 0;
+}
+
+/* BTN FOUR */
+
+
+.btn-four:hover span {
+  transform: scale(1.2, 1.2);
+}
+
+
+.btn-four:hover::before {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+.btn-four::after {
+  transition: all 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+
+}
+
+
+/* BTN FIVE */
+.btn-five::before {
+  transition: transform 0.15s, 0.15s border-radius 0.15s;
+  opacity: 0;
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(0.1, 0.1);
+  border-radius: 50%;
+}
+
+.btn-five:hover::before {
+    background-color: red;
+}
+
+.btn-five::after {
+    cursor: url('logo.png'), auto;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+
+/* BTN SIX */
+.btn-six::before {
+    content: '';
+  opacity: 0;
+  background: #ffc628;
+  transform: scale(1.3, 1.3);
+}
+
+.btn-six:hover::before {
+    content: 'Join the Defenders';
+    color: #4a4a4a;
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+.btn-six::after {
+
+  transition: all 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.btn-six:hover::after {
+  transform: scale(0, 0);
+  opacity: 0;
+}
